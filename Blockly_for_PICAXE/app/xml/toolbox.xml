@@ -1,0 +1,621 @@
+  <xml id="toolbox">
+
+  <!-- OUTPUT -->
+
+  <category id="cat01" name="Output" colour="#5ba5a5">
+    <!-- OUTPUT : TURN OUTPUT [PIN] [ON/OFF] -->
+    <block type="picaxe_output_outputon"></block>
+    <!-- OUTPUT : TURN OUTPUT [PIN] [ON/OFF] FOR [CV] MS -->
+    <block type="picaxe_output_outputonfor">
+    <value name="TIME">
+      <block type="picaxe_vals_val">
+        <field name="VALUE">1000</field>
+      </block>
+    </value>
+   </block>
+   <block type="picaxe_output_pulseoutput">
+     <value name="TIME">
+       <block type="picaxe_vals_val">
+         <field name="VALUE">500</field>
+       </block>
+     </value>
+   </block>
+    <!-- OUTPUT : PLAY NOTE [CV] FOR [CV] ON [PIN] -->
+    <block type="picaxe_output_sound">
+      <value name="NOTE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">64</field>
+        </block>
+      </value>
+      <value name="TIME">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">500</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : PLAY [SONG] ON [PIN] -->
+    <block type="picaxe_output_play"></block>
+    <!-- OUTPUT : SPE035 [command] [CV] ON [PIN] -->
+    <block type="picaxe_output_spe035">
+      <field name="COMMAND">play</field>
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : TUNE [TEXT] -->
+    <block type="picaxe_output_tune"></block>
+    <!-- OUTPUT : SEND INFRARED [CV] ON [PIN] -->
+    <block type="picaxe_output_irout">
+      <value name="COMMAND">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : SET SERVO [PIN] TO [CV] -->
+    <block type="picaxe_output_servo">
+      <value name="POSITION">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">150</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : SET SERVOPOS [PIN] TO [CV] -->
+    <block type="picaxe_output_servopos">
+      <value name="POSITION">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">150</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : SET PWMOUT DUTY [CV] PERIOD [CV] ON [PIN] -->
+    <block type="picaxe_output_pwmout">
+      <value name="PERIOD">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">100</field>
+        </block>
+      </value>
+      <value name="DUTY">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">200</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : SET PINS [PORT] TO [CV] -->
+    <block type="picaxe_output_pins">
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">255</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : SET DIRS [PORT] TO [CV] -->
+    <block type="picaxe_output_dirs">
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">255</field>
+        </block>
+      </value>
+    </block>
+    <!-- OUTPUT : HIGH [PIN] -->
+    <!-- <block type="picaxe_output_high"></block> -->
+    <!-- OUTPUT : LOW [PIN] -->
+    <!-- <block type="picaxe_output_low"></block> -->
+    <!-- OUTPUT : TOGGLE [PIN] -->
+    <block type="picaxe_output_toggle"></block>
+    <!-- OUTPUT : PULSE OUTPUT [PIN] FOR [CV] MS -->
+  </category>
+
+  <!-- INPUT -->
+
+  <category id="cat02" name="Input" colour="#49a6d4">
+    <!-- INPUT : IF [PIN] IS [ON/OFF] THEN [STAT] -->
+    <block type="picaxe_input_ifpin"></block>
+    <!-- INPUT : IF [PIN] IS [ON/OFF] THEN [STAT] ELSE [STAT] -->
+    <block type="picaxe_input_ifpinelse"></block>
+    <!-- INPUT : READ ANALOGUE [PIN] TO [VAR] -->
+    <block type="picaxe_input_readadc"></block>
+    <!-- INPUT : READ TEMPERATURE [PIN] TO [VAR] -->
+    <block type="picaxe_input_readtemp"></block>
+    <!-- INPUT : READ ULTRASONIC [PIN] TO [VAR] -->
+    <block type="picaxe_input_ultra"></block>
+    <block type="picaxe_input_ultra2"></block>
+    <!-- INPUT : READ INFRARED [PIN] TO [VAR] -->
+    <!-- <block type="picaxe_input_irin"></block> -->
+    <!-- INPUT : READ INFRARED [PIN] TO [VAR] TIMEOUT-->
+    <block type="picaxe_input_irin_timeout">
+      <field name="TV">TRUE</field>
+      <field name="USE_TIMEOUT">TRUE</field>
+        <value name="TIMEOUT">
+          <block type="picaxe_vals_val">
+            <field name="VALUE">500</field>
+          </block>
+        </value>
+    </block>
+    <!-- INPUT : READ TV INFRARED [PIN] TO [VAR] -->
+    <!-- <block type="picaxe_input_irintv"></block> -->
+    <!-- INPUT : INPUT [PIN] -->
+    <block type="picaxe_io_inputval"></block>
+    <!-- INPUT : INPUTPORT [PORT] -->
+    <block type="picaxe_input_inputPort"></block>
+  </category>
+
+  <!-- DELAYS -->
+
+  <category id="cat03" name="Delays" colour="#b18e35">
+    <!-- DELAYS : PAUSE FOR [CV] MS -->
+    <block type="picaxe_delays_pause">
+      <value name="TIME">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">500</field>
+        </block>
+      </value>
+    </block>
+    <!-- DELAYS : SLEEP FOR [CV] S -->
+    <block type="picaxe_delays_sleep">
+      <value name="TIME">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    <!-- DELAYS : PAUSE FOR [CV] US -->
+    <!--
+    <block type="picaxe_delays_pauseus">
+      <value name="TIME">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">500</field>
+        </block>
+      </value>
+    </block>
+    -->
+    <!-- DELAYS : WAIT UNTIL [PIN] IS [ON/OFF] -->
+    <block type="picaxe_delays_until_pin"></block>
+  </category>
+
+  <!-- LOOPS -->
+
+    <category id="cat04" name="Loops" colour="#b18e35">
+    <!-- LOOPS : FOREVER DO [STAT] -->
+    <block type="picaxe_loops_forever"></block>
+    <!-- LOOPS : REPEAT [STAT] UNTIL [PIN] IS [ON/OFF] -->
+    <block type="picaxe_loops_repeat_pin"></block>
+    <!-- LOOPS : REPEAT [STAT] UNTIL [CV] [OP] [CV] -->
+    <block type="picaxe_loops_repeat">
+      <value name="VAR1">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+        <value name="VAR2">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    <!-- LOOPS : WHILE [PIN] IS [ON/OFF] DO [STAT] -->
+    <block type="picaxe_loops_while_pin"></block>
+    <!-- LOOPS : WHILE [CV] [OP] [CV] DO [STAT] -->
+    <block type="picaxe_loops_while">
+      <value name="VAR1">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+        <value name="VAR2">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    <!-- LOOPS : COUNT WITH [VAR] FROM [CV] TO [CV] BY [CV] -->
+    <block type="picaxe_loops_count">
+      <field name="VAR">varA</field>
+      <value name="FROM">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+      <value name="TO">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">4</field>
+        </block>
+      </value>
+      <value name="STEP">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+    </block>
+    <!-- LOOPS : COUNT DOWN WITH [VAR] FROM [CV] TO [CV] BY [CV] -->
+    <block type="picaxe_loops_countdown">
+      <field name="VAR">varA</field>
+      <value name="FROM">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">4</field>
+        </block>
+      </value>
+      <value name="TO">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+      <value name="STEP">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+    </block>
+    </category>
+
+  <!-- VARIABLES -->
+
+  <category id="cat05" name="Variables" colour="#d05f2d">
+    <!-- VARIABLES : IF [CV] [OP] [CV] THEN [STAT] -->
+    <!-- <block type="picaxe_variables_if">
+      <value name="VAR1">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+      <value name="VAR2">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    -->
+    <!-- VARIABLES : IF [CV] [OP] [CV] THEN [STAT] ELSE [STAT] -->
+    <!-- <block type="picaxe_variables_ifelse">
+      <value name="VAR1">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+        <value name="VAR2">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    -->
+    <!-- VARIABLES : MUTATOR -->
+     <block type="picaxe_flow_mutator_if">
+        <value name="VAR10">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+        <value name="VAR20">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+      </block>
+    <block type="picaxe_flow_mutator_if">
+      <mutation else="1"></mutation>
+      <field name="OP0">&gt;</field>
+      <value name="VAR10">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+      <value name="VAR20">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    <!-- VARIABLES : SET [VAR] TO [CV] -->
+    <block type="picaxe_variables_set">
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value></block>
+    <!-- VARIABLES : SET [VAR] TO [RANDOM] -->
+    <block type="picaxe_variables_random"></block>
+    <!-- VARIABLES : INCREASE [VAR] BY [CV] -->
+    <block type="picaxe_variables_inc">
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+    </block>
+    <!-- VARIABLES : DECREASE [VAR] BY [CV] -->
+    <block type="picaxe_variables_dec">
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">1</field>
+        </block>
+      </value>
+    </block>
+    <!-- VARIABLES : BINTOASCII -->
+    <block type="picaxe_variables_bintoascii"></block>
+    <!-- VARIABLES : [VAR] -->
+    <block type="picaxe_vals_var"></block>
+    <!-- VARIABLES : [VAR] , [VAR] -->
+    <block type="picaxe_vals_varcomma">
+      <value name="VAR1">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+      <value name="VAR2">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varB</field>
+        </block>
+      </value>
+    </block>
+    <!-- INPUT : INPUT [PIN] -->
+    <block type="picaxe_io_inputval"></block>
+  </category>
+
+  <!-- MATHS -->
+
+  <category id="cat06" name="Maths" colour="#d05f2d">
+    <!-- VARIABLES : SET [VAR] TO [CV] -->
+    <block type="picaxe_variables_set">
+      <value name="VALUE">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">10</field>
+        </block>
+      </value>
+    </block>
+    <!-- VARIABLES : SET [VAR] TO [OP] -->
+    <block type="picaxe_variables_set">
+      <field name="NAME">varA</field>
+      <value name="VALUE">
+        <block type="picaxe_vals_varop" inline="true">
+          <field name="OP">+</field>
+        </block>
+      </value>
+    </block>
+    <!-- MATHS : [NUMBER] -->
+    <block type="picaxe_vals_val"></block>
+    <!-- MATHS : [VAR] ( Duplicated from VARIABLES ) -->
+    <block type="picaxe_vals_var"></block>
+    <!-- INPUT : INPUT [PIN] -->
+    <block type="picaxe_io_inputval"></block>
+    <!-- MATHS : [CV] [OP] [CV] -->
+    <block type="picaxe_vals_varop"></block>
+  </category>
+
+  <!-- PROCEDURES -->
+
+    <category id="cat07" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category>
+
+  <!-- TASKS -->
+
+  <category id="cat08" name="Tasks" colour="#b18e35">
+    <!-- TASKS : START -->
+    <block type="picaxe_control_start"></block>
+    <!-- TASKS : STOP THIS TASK -->
+    <block type="picaxe_tasks_stop"></block>
+    <!-- TASKS : SUSPEND [CV] -->
+    <block type="picaxe_tasks_suspend">
+      <value name="TASK">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+    </block>
+    <!-- TASKS : RESUME TASK [CV] -->
+    <block type="picaxe_tasks_resume">
+      <value name="TASK">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+    </block>
+    <!-- TASKS : RESTART TASK [CV] -->
+    <block type="picaxe_tasks_restart">
+      <value name="TASK">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+    </block>
+    <!-- ADVANCED : RESET ALL TASKS-->
+    <block type="picaxe_tasks_reset"></block>
+  </category>
+
+  <category id="cat09" name="Motors" colour="#5ba5a5">
+      <!-- OUTPUT : SET MOTOR [MOTOR] TO [DIRECTION] -->
+      <block type="picaxe_output_motor"></block>
+      <!-- OUTPUT : SET MOTOR [MOTOR] TO [DIRECTION] FOR [CV] MS -->
+      <block type="picaxe_output_motorfor">
+        <value name="TIME">
+          <block type="picaxe_vals_val">
+            <field name="VALUE">1000</field>
+          </block>
+        </value>
+      </block>
+    
+  <!--Category motors-->
+    <!-- MOTOR : GENERIC -->
+    <block type="picaxe_motors_generic">
+      <field name="COMMAND_MOTORS">STOP</field>
+    </block>
+    <!-- MOTOR : SERVO SETUP -->
+    <block type="picaxe_motors_servo_setup">
+      <field name="PIN">B.0</field>
+      <field name="PIN2">B.1</field>
+      <value name="STOPA">
+        <block type="picaxe_vals_val" id="36">
+          <field name="VALUE">150</field>
+        </block>
+      </value>
+      <value name="OFFSETA">
+        <block type="picaxe_vals_val" id="44">
+          <field name="VALUE">30</field>
+        </block>
+      </value>
+      <value name="STOPB">
+        <block type="picaxe_vals_val" id="45">
+          <field name="VALUE">150</field>
+        </block>
+      </value>
+      <value name="OFFSETB">
+        <block type="picaxe_vals_val" id="46">
+          <field name="VALUE">30</field>
+        </block>
+      </value>
+    </block>
+    <!-- MOTOR : BOT120 -->
+    <!-- <block type="picaxe_motors_BOT120"></block> -->
+    <!-- MOTOR : CHI035 -->
+    <!-- <block type="picaxe_motors_CHI035"></block> -->
+    <!-- MOTOR : AXE023 -->
+    <!-- <block type="picaxe_motors_AXE023"></block> -->
+    <!-- MOTOR : SERVO -->
+    <!-- <block type="picaxe_motors_servo"></block> -->
+    <!-- MOTOR : AXE120 -->
+    <!-- <block type="picaxe_motors_AXE120"></block> -->
+    <!-- MOTOR : KMR01 -->
+    <!-- <block type="picaxe_motors_KMR01"></block> -->
+  </category>
+
+  <!-- SERIAL -->
+
+  <category id="cat10" name="Serial" colour="#5ba5a5">
+    <!-- SERIAL : DEBUG -->
+    <block type="picaxe_serial_debug"></block>
+    <!-- SERIAL : SERTXD [TEXT] -->
+    <block type="picaxe_serial_sertxd">
+      <value name="VALUE">
+        <block type="picaxe_vals_str" />
+      </value>
+    </block>
+    <!-- SERIAL : SERIAL OUTPUT AT [BAUD] ON [PIN] [TEXT] -->
+    <block type="picaxe_serial_serout">
+      <value name="VALUE">
+        <block type="picaxe_vals_str" />
+      </value>
+    </block>
+    <!-- SERIAL : LCD PRINT ON [PIN] [TEXT] -->
+    <block type="picaxe_serial_lcd">
+      <value name="VALUE">
+        <block type="picaxe_vals_str" />
+      </value>
+    </block>
+    <!-- SERIAL : LCD SEND [ACTION] TO [PIN] -->
+    <block type="picaxe_serial_lcdcmd"></block>
+    <!-- SERIAL : SERIAL IN AT [BAUD] ON [PIN] TO [VAR] -->
+    <block type="picaxe_serial_serin"></block>
+    <!-- SERIAL : SERRXD TO [VAR] -->
+    <block type="picaxe_serial_serrxd"></block>
+    <!-- SERIAL : [TEXT] -->
+    <!-- SERIAL : HSERSETUP [BAUD] -->
+    <block type="picaxe_serial_hsersetup"></block>
+    <!-- SERIAL : HSEROUT [TEXT] -->
+    <block type="picaxe_serial_hserout">
+      <value name="VALUE">
+        <block type="picaxe_vals_str" />
+      </value>
+    </block>
+    <!-- SERIAL : HSERIN TO [VAR] -->
+    <block type="picaxe_serial_hserin"></block>
+    <!-- SERIAL : [TEXT] -->
+    <block type="picaxe_vals_str" />
+  </category>
+
+  <!-- ADVANCED -->
+
+  <category id="cat11" name="Advanced" colour="#b18e35">
+    <!-- ADVANCED : COMMENT [TEXT] -->
+    <block type="picaxe_advanced_comment"></block>
+    <!-- ADVANCED : BASIC [TEXT] -->
+    <block type="picaxe_advanced_basic"></block>
+    <!-- ADVANCED : CUSTOM [TEXT] -->
+    <!-- <block type="picaxe_advanced_custom"></block> -->
+    <!-- ADVANCED : READ [VAR] FROM EEPROM [CV] -->
+    <block type="picaxe_advanced_read">
+      <value name="LOCATION">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+    </block>
+    <!-- ADVANCED : WRITE [CV] TO EEPROM [CV] -->
+    <block type="picaxe_advanced_write">
+      <value name="LOCATION">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+    </block>
+    <!-- ADVANCED : SET I2C ADDRESS TO [DEVICE] -->
+    <block type="picaxe_advanced_i2csetup_device">
+      <field name="DEVICE">Nunchuck A</field>
+    </block>
+    <!-- ADVANCED : SET I2C ADDRESS TO [CV] -->
+    <block type="picaxe_advanced_i2csetup">
+      <value name="ADDRESS">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">%10100000</field>
+        </block>
+      </value>
+    </block>
+    <!-- ADVANCED : READ [VAR] FROM I2C [CV] -->
+    <block type="picaxe_advanced_i2cread">
+      <value name="LOCATION">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+    </block>
+    <!-- ADVANCED : WRITE [CV] TO I2C [CV] -->
+    <block type="picaxe_advanced_i2cwrite">
+      <value name="LOCATION">
+        <block type="picaxe_vals_val">
+          <field name="VALUE">0</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="picaxe_vals_var">
+          <field name="VAR">varA</field>
+        </block>
+      </value>
+    </block>
+    <!-- ADVANCED : RESET ALL -->
+    <block type="picaxe_advanced_reset"></block>
+    <!-- ADVANCED : ADVANCED : INTERRUPT WHEN [PIN] IS [ON/OFF] -->
+    <block type="picaxe_advanced_setint"></block>
+    <!-- ADVANCED : ADVANCED : INTERRUPT OFF] -->
+    <block type="picaxe_advanced_setintoff"></block>
+    <!-- ADVANCED : DISCONNECT -->
+    <block type="picaxe_advanced_disconnect"></block>
+    <!-- ADVANCED : RECONNECT -->
+    <block type="picaxe_advanced_reconnect"></block>
+    <!-- ADVANCED : RUN [SLOT] -->
+    <block type="picaxe_advanced_run"></block>
+    <!-- ADVANCED : #SLOT [SLOT] -->
+    <block type="picaxe_advanced_slot"></block>   
+  </category>
+
+  <!--
+  <category name="Custom">
+    <block type="picaxe_custom_outputon" />
+  </category>
+  -->
+  
+  </xml>

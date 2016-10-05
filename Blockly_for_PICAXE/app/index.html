@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="css/style.css" rel="stylesheet">
+  <link id="print-style" href="css/print.css" rel="stylesheet" media="print">
+  <script src="blockly-min.js"></script>
+
+  <!--
+  <script src="js/blockly/generators/picaxebasic/custom.js"></script>
+  <script src="js/blockly/generators/javascript/custom.js"></script>
+  <script src="js/blockly/blocks/custom.js"></script>
+  -->
+  <script src="app.js"></script>
+
+  <style>
+
+  #wrapper {
+      visibility: hidden;
+  }
+
+  </style>
+</head>
+
+<body>
+  <header></header>
+  <div id="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <img alt="PICAXE" src="assets/picaxe-128.png">
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <!-- menus inserted here -->
+        <li id="mode-group"><p class="navbar-text">...:</p><div class="btn-group" data-toggle="buttons" role="group">
+          <label class="btn btn-default active navbar-btn">
+            <input type="radio" name="edit-mode" value="blocks" autocomplete="off" checked> <span>...</span>
+          </label>
+          <label class="btn btn-default navbar-btn">
+            <input type="radio" name="edit-mode" value="code" autocomplete="off"> <span>...</span>
+          </label>
+        </div></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="userMenuLabel" class="dropdown-label">...</span><span class="caret"></span></a>
+          <ul id="userMenu" class="dropdown-menu" role="menu">
+            <li><a href="#" id="px-um-edit" class="px-cloudweb">...</a></li>
+            <li><a href="#" id="px-um-logout" class="px-local-signed-in px-cloudweb">...</a></li>
+            <li><a href="#" id="px-um-login" class="px-local-not-signed-in">...</a></li>
+          </ul>
+        </li>
+        <li id="nav-help"><a href="http://www.picaxe.com/blockly-help" target="_blank">...</a></li>
+        <li class="dropdown" data-select="true">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="languageMenuLabel" class="dropdown-label"></span><span class="caret"></span></a>
+          <ul id="languageMenu" class="dropdown-menu" role="menu"></ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="row-wrapper">
+      <div id="simulator">
+        <div class="head">
+          <div class="dropdown" id="rtsDropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <span class="btn-label">...</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="simulatorMenu">
+              <li><a href="#" id="sim-connect">...</a></li>
+              <li><a href="#" id="sim-disconnect">...</a></li>
+              <li><a href="#" id="sim-download">...</a></li>
+            </ul>
+          </div>
+          <button type="button" class="close">&times;</button>
+        </div>
+        <div class="content">
+          <div class="diagram">
+            <svg width="200" height="570" />
+          </div>
+          <div class="controls">
+            <button id="sim-run" class="btn"><span class="glyphicon glyphicon-play"/></button>
+            <button id="sim-pause" class="btn"><span class="glyphicon glyphicon-pause"/></button>
+            <button id="sim-step" class="btn"><span class="glyphicon glyphicon-step-forward"/></button>
+            <button id="sim-reset" class="btn"><span class="glyphicon glyphicon-stop"/></button>
+            <input id="sim-speed" type="range" data-show-value="true">
+          </div><!-- /.controls -->
+          <div class="variables">
+            <table class="table table-striped table-bordered table-condensed">
+              <thead>
+                <th class="var-name">[Name]</th>
+                <th class="var-val">[value]</th>
+              </thead>
+            </table>
+            <div class="data">
+              <table class="table table-striped table-bordered table-condensed">
+                <tbody>
+                  <tr><td>&nbsp;</td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div><!-- /.variables -->
+        </div><!-- /.content -->
+      </div><!-- /#simulator -->
+      <div id="main">
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+          <li id="tab-blocks" class="active"><a href="#pane-blocks" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+          <li id="tab-basic"><a href="#pane-basic" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+          <li id="tab-debug"><a href="#pane-debug" data-toggle="tab"><span class="tab-label">...</span><button type="button" class="close"><span aria-hidden="true">x</span></button></a></li>
+          <li id="tab-js"><a href="#pane-js" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+          <li id="tab-xml"><a href="#pane-xml" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+        </ul>
+        <div id="panes-wrapper">
+          <div id="panes">
+            <div class="tab-pane active" id="pane-blocks">
+              <div id="content_blocks" class="full-height"></div>
+            </div>
+            <div class="tab-pane" id="pane-basic">
+                <textarea id="content_basic" class="full-height"></textarea>
+                <div id="pos-display">
+                    <span id="pos-line">...</span>
+                    <span id="pos-char">...</span>
+                    <span id="total-lines">...</span>
+                </div>
+            </div>
+            <div class="tab-pane" id="pane-js">
+                <textarea id="content_js" class="full-height"></textarea>
+            </div>
+            <div class="tab-pane" id="pane-debug">
+              <div id="content_debug" class="full-height"></div>
+            </div>
+            <div class="tab-pane" id="pane-xml">
+              <textarea id="content_xml" class="full-height"></textarea>
+            </div>
+          </div><!-- /#panes -->
+          <div id="main-extras">
+            <div class="editor-toolbar">
+              <button id="search-button" class="btn btn-default glyphicon glyphicon-search" title="Find"></button>
+              <div class="search-form">
+                  <input type="search" id="search-input" placeholder="...">
+                  <span id="search-count"></span>
+                  <button id="search-previous" class="btn btn-default glyphicon glyphicon-chevron-up"></button>
+                  <button id="search-next" class="btn btn-default glyphicon glyphicon-chevron-down"></button>
+              </div>
+              <button id="gotoline-button" class="btn btn-default glyphicon glyphicon-arrow-right" title="Go to line"></button>
+              <div class="gotoline-form">
+                  <input type="number" id="gotoline-input" placeholder="...">
+                  <button id="gotoline-action" class="btn btn-default">Go</button>
+              </div>
+            </div><!-- /.editor-toolbar -->
+            <div id="version"></div>
+            <div id="messages"></div>
+          </div><!-- /#main-extras -->
+        </div><!-- /#panes-wrapper -->
+      </div><!-- /#main -->
+    </div><!-- /#row-wrapper -->
+  </div><!-- /#wrapper -->
+
+<footer></footer>
+
+<div id="modals" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="true">
+  <div id="data-progress" class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">...<a class="anchorjs-link"><span class="anchorjs-icon"></span></a></h4>
+      </div>
+      <div class="modal-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  <div id="confirm-msg" class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default accept"></button>
+          <button type="button" class="btn btn-default decline"></button>
+        </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /#modals -->
+</body>
+</html>

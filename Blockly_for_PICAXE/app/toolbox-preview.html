@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link href="css/toolbox-preview.css" rel="stylesheet">    
+    
+  <!--
+  unless blockly code is recompiled with Closure,
+  it is easier to load it separately from the require AMD modules
+  -->
+
+  <script src="lib/blockly/blockly_compressed.js"></script>
+  <script src="js/generators/picaxebasic.js"></script>
+  <script src="js/generators/picaxebasic/field_variable.js"></script>
+  <script src="js/generators/picaxebasic/field_textarea.js"></script>
+
+  <script src="js/generators/picaxebasic/control.js"></script> 
+  <script src="js/generators/picaxebasic/vals.js"></script>
+  <script src="js/generators/picaxebasic/io.js"></script>
+  <script src="js/generators/picaxebasic/flow.js"></script>
+  <script src="js/generators/picaxebasic/procedures.js"></script>
+  <script src="js/generators/picaxebasic/loops.js"></script>
+  <script src="js/generators/picaxebasic/delays.js"></script>
+  <script src="js/generators/picaxebasic/output.js"></script>
+  <script src="js/generators/picaxebasic/input.js"></script>
+  <script src="js/generators/picaxebasic/variables.js"></script>
+  <script src="js/generators/picaxebasic/tasks.js"></script>
+  <script src="js/generators/picaxebasic/serial.js"></script>
+  <script src="js/generators/picaxebasic/advanced.js"></script>
+
+  <script src="js/blocks/blockcolors.js"></script>
+  <script src="js/blocks/picaxe.js"></script>
+  <script src="js/blocks/parseevents.js"></script>
+  <script src="js/blocks/breakpoint.js"></script>
+
+  <script src="js/blocks/control.js"></script>
+  <script src="js/blocks/vals.js"></script>
+  <script src="js/blocks/io.js"></script>
+  <script src="js/blocks/flow.js"></script>
+  <script src="js/blocks/procedures.js"></script>
+  <script src="js/blocks/loops.js"></script>
+  <script src="js/blocks/delays.js"></script>
+  <script src="js/blocks/output.js"></script>
+  <script src="js/blocks/input.js"></script>
+  <script src="js/blocks/variables.js"></script>
+  <script src="js/blocks/tasks.js"></script>
+  <script src="js/blocks/serial.js"></script>
+  <script src="js/blocks/advanced.js"></script>
+
+  <script data-main="js/toolbox-preview-main.js" src="lib/require.js"></script>
+
+  <style>
+
+
+
+  </style>
+
+</head>
+
+<body>
+<div id="blocklyArea"></div>
+<div id="blocklyDiv"></div>
+<xml id="toolbox">
+  <category id="cat01" name="Common">
+    <block type="picaxe_control_start"></block>
+    </category>
+</xml>
+</body>
+</html>

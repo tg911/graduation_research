@@ -1,0 +1,33 @@
+#top {
+    display: none;
+}
+
+.blocklyToolboxDiv {
+    display: none !important;
+}
+
+rect.blocklyMainBackground{
+    fill: rgb(255,255,255);
+}
+
+.blocklyScrollbarBackground, .blocklyScrollbarKnob, image[clip-path*="blocklyTrash"] {
+    display: none;
+}
+
+svg.blocklySvg {
+  overflow: visible;
+}
+
+.tab-content > .tab-pane, #wrapper, #editor {
+    position: static;
+}
+
+.tab-pane, .tab-pane > * {
+ height: auto;
+}
+
+header, footer {
+  margin: 20px;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  font-size: 14pt;
+}

@@ -1,0 +1,33 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "PICAXE Blockly",
+  "description": "Blockly program editor for PICAXE microcontrollers",
+  "version": "1.2.0",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["chrome/background.js"]
+    }
+  },
+  "icons": {
+    "16": "chrome/picaxeblockly-16.png",
+    "24": "chrome/picaxeblockly-24.png",
+    "32": "chrome/picaxeblockly-32.png",
+    "48": "chrome/picaxeblockly-48.png",
+    "128": "chrome/picaxeblockly-128.png"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "serial",
+    "clipboardRead",
+    "clipboardWrite",
+    "http://www.picaxecloud.com/",
+    "storage",
+      {
+          "fileSystem": [
+            "write"
+            ]
+      }
+  ]
+}
