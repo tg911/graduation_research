@@ -16,15 +16,15 @@
       </value>
     </block>
     <!-- OUTPUT : HIGH [PIN] -->
-    <!-- 
+    <!--
     <block type="picaxe_output_high" description="High"></block>
     -->
     <!-- OUTPUT : LOW [PIN] -->
-    <!-- 
+    <!--
     <block type="picaxe_output_low" description="Low"></block>
      -->
     <!-- OUTPUT : TOGGLE [PIN] -->
-    <!-- 
+    <!--
     <block type="picaxe_output_toggle" description="Toggle"></block>
     -->
     <!-- OUTPUT : PULSE OUTPUT [PIN] FOR [CV] MS -->
@@ -262,7 +262,7 @@
 
   <category id="cat05" name="Variables">
     <!-- VARIABLES : IF [CV] [OP] [CV] THEN [STAT] -->
-    <!-- 
+    <!--
     <block type="picaxe_variables_if" description="If" force="hidden">
       <value name="VAR1">
         <block type="picaxe_vals_var">
@@ -277,7 +277,7 @@
     </block>
     -->
     <!-- VARIABLES : IF [CV] [OP] [CV] THEN [STAT] ELSE [STAT] -->
-    <!-- 
+    <!--
     <block type="picaxe_variables_ifelse" description="If Else" force="hidden">
       <value name="VAR1">
         <block type="picaxe_vals_var">
@@ -485,7 +485,7 @@
     <!-- MOTOR : AXE120 -->
     <!-- <block type="picaxe_motors_AXE120" description="AXE120 Motor"></block> -->
     <!-- MOTOR : KMR01 -->
-    <!-- <block type="picaxe_motors_KMR01" description="KMR01 Motor"></block> -->    
+    <!-- <block type="picaxe_motors_KMR01" description="KMR01 Motor"></block> -->
   </category>
 
   <!-- SERIAL -->
@@ -540,7 +540,7 @@
     <!-- ADVANCED : BASIC [TEXT] -->
     <block type="picaxe_advanced_basic" description="Basic"></block>
     <!-- ADVANCED : CUSTOM [TEXT] -->
-    <!-- 
+    <!--
     <block type="picaxe_advanced_custom" description="Custom"></block>
     -->
     <!-- ADVANCED : READ [VAR] FROM EEPROM [CV] -->
@@ -630,5 +630,5 @@
     <block type="picaxe_custom_outputon" description="Output On"></block>
   </category>
   -->
-  
+
   </xml>

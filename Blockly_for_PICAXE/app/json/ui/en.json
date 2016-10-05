@@ -96,7 +96,7 @@
     "m-project": "Project",
     "pm-new": "New",
     "pm-open": "Open",
-    "pm-merge": "Merge", 
+    "pm-merge": "Merge",
     "pm-save": "Save",
     "pm-saveas": "Save as",
     "pm-print": "Print",
@@ -187,7 +187,7 @@
 
     "MISSING_BINARY_DATA": "There was a problem with the compiled data from the service",
     "MODEL_MISMATCH": "The program will not run on your PICAXE type",
-    
+
     "RTS_OK": "Real Time Simulation Connected",
     "RTS_NO_ANSWER": "Error: Check power supply. Make sure communicator program is downloaded on your PICAXE",
     "WRONG_PICAXE": "The PICAXE Type connected is not corresponding to the simulation",
