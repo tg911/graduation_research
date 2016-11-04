@@ -8,14 +8,14 @@
 
     "cat01": "出力",
     "cat02": "入力",
-    "cat03": "遅延",
+    "cat03": "停止",
     "cat04": "繰り返し",
     "cat05": "条件分岐",
     "cat06": "変数",
     "cat07": "関数",
     "cat08": "タスク",
     "cat09": "モーター",
-    "cat10": "Serial",
+    "cat10": "シリアル",
     "cat11": "高度なブロック",
 
     "MODE_BLOCKS": "ブロック",
@@ -26,7 +26,7 @@
 
     "MODE": "表示モード:",
 
-    "DOWNLOADING": "プログラムをダウンロードしています・・・",
+    "DOWNLOADING": "プログラムを書き込んでいます・・・",
     "CHECKING": "確認中・・・",
 
     "CODE_SETTINGS_TITLE": "コードエディタの設定",
@@ -41,8 +41,8 @@
     "SETTINGS_GRID": "グリッド",
     "SETTINGS_TRASHATTOP": "ゴミ箱を右上に表示する",
 
-    "VALUE_CHANGED":"N.B. Your value has been changed from <strong>%1</strong> to <strong>%2</strong>",
-    "BAD_VAR_NAME":"N.B. Variable names must start with a letter, and contain only letters, numbers or underscores",
+    "VALUE_CHANGED":"注意：不正な値<strong>%1</strong>は値<strong>%2</strong>へ変換されます",
+    "BAD_VAR_NAME":"注意：変数名は文字で始まり、文字、数字、アンダースコアが含まれている必要があります",
     "RESERVED_VAR_NAME":"N.B. The name %1 is already used in the BASIC language",
 
     "BLOCKS_IGNORED":"注意：スタートブロックに接続されていないブロックは無視されます",
@@ -74,7 +74,7 @@
     "NO_CLIPBOARD_HEAD": "Clipboard Security Restrictions",
     "NO_CLIPBOARD_BODY": "Due to browser security restrictions you must use Ctrl+X, Ctrl+C, Ctrl+V shortcut keys for clipboard operations.",
     "CLOSE_ACTION": "Close",
-    "COMPILE_SUCCESS": "プログラムのダウンロードに成功しました",
+    "COMPILE_SUCCESS": "プログラムの書き込みに成功しました",
     "CONNECT_SUCCESS": "ハードウェアが見つかりました：%1",
     "SYNTAX_OK": "構文に問題はありません",
     "EDIT_TOOLBOX": "Edit Toolbox",
@@ -198,7 +198,7 @@
     "NO_PORTS" : "None available",
 
     "post-setbreak" : "Connect power now!\nSearching for hardware on %1",
-    "program-start": "プログラムをダウンロードしています・・・",
+    "program-start": "プログラムを書き込んでいます・・・",
     "program-complete": "PASS - programmed %1",
     "hardware-error": "エラー：ポート%1にハードウェアが見つかりません",
     "program-error": "Error: Verification error. Check power supply.",
