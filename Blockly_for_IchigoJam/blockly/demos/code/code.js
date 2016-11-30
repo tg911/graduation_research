@@ -245,7 +245,7 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'javascript', 'php', 'python', 'dart', 'lua', 'xml'];
+Code.TABS_ = ['blocks', 'ichigojambasic', 'javascript', 'php', 'python', 'dart', 'lua', 'xml'];
 
 Code.selected = 'blocks';
 
@@ -348,6 +348,14 @@ Code.renderContent = function() {
     if (typeof prettyPrintOne == 'function') {
       code = content.textContent;
       code = prettyPrintOne(code, 'lua');
+      content.innerHTML = code;
+    }
+  } else if (content.id == 'content_ichigojambasic') {
+    code = Blockly.IchigoJamBASIC.workspaceToCode(Code.workspace);
+    content.textContent = code;
+    if (typeof prettyPrintOne == 'function') {
+      code = content.textContent;
+      code = prettyPrintOne(code, 'ichigojamabasic');
       content.innerHTML = code;
     }
   }
@@ -480,8 +488,7 @@ Code.initLanguage = function() {
   languageMenu.addEventListener('change', Code.changeLanguage, true);
 
   // Inject language strings.
-  document.title += ' ' + MSG['title'];
-  document.getElementById('title').textContent = MSG['title'];
+  // document.title += ' ' + MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
   document.getElementById('linkButton').title = MSG['linkTooltip'];

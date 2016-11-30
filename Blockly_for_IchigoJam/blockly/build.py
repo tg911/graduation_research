@@ -181,6 +181,8 @@ class Gen_compressed(threading.Thread):
     self.gen_generator("dart")
     self.gen_generator("lua")
     self.gen_generator("c")
+    self.gen_generator("ichigojambasic")
+
 
   def gen_core(self):
     target_filename = "blockly_compressed.js"
