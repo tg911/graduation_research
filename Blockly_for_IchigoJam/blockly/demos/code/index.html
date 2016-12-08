@@ -14,6 +14,7 @@
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
   <script src="../../ichigojambasic_compressed.js"></script>
+  <!-- <script src="../../ichigojambasic_uncompressed_fordebug.js"></script> -->
   <script src="code.js"></script>
 </head>
 <body>
@@ -75,7 +76,71 @@
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
-    <category name="{catLogic}" colour="210">
+    <category name="{catOutput}" colour="180">
+      <block type="led"></block>
+      <block type="print"></block>
+      <block type="beep"></block>
+      <block type="play"></block>
+      <block type="tempo"></block>
+      <block type="out"></block>
+      <block type="pwm"></block>
+    </category>
+    <category name="{catInput}" colour="210">
+      <block type="input"></block>
+    </category>
+    <category name="{catLoops}" colour="45">
+      <block type="goto"></block>
+      <block type="for"></block>
+    </category>
+    <category name="{catVariables}" colour="0">
+      <block type="if"></block>
+      <block type="if_else"></block>
+    </category>
+    <category name="{catCalculations}" colour="90">
+      <block type="let"></block>
+      <block type="number"></block>
+      <block type="string"></block>
+      <block type="calculation"></block>
+      <block type="variable"></block>
+    </category>
+    <category name="{catNotes}" colour="260">
+      <block type="note_c"></block>
+      <block type="note_d"></block>
+      <block type="note_e"></block>
+      <block type="note_f"></block>
+      <block type="note_g"></block>
+      <block type="note_a"></block>
+      <block type="note_b"></block>
+      <block type="note_r"></block>
+      <block type="note_length"></block>
+      <block type="semitone"></block>
+      <block type="note_tempo"></block>
+      <block type="note_length_init"></block>
+      <block type="octave"></block>
+      <block type="octave_updown"></block>
+      <block type="note_loop"></block>
+      <block type="note_end"></block>
+    </category>
+    <category name="{catProcedures}" colour="315">
+      <block type="btn"></block>
+      <block type="rnd"></block>
+      <block type="tick"></block>
+      <block type="inkey"></block>
+      <block type="chr"></block>
+      <block type="asc"></block>
+      <block type="scr"></block>
+      <block type="in"></block>
+      <block type="ana"></block>
+    </category>
+    <category name="{catothers}" colour="65">
+      <block type="wait"></block>
+      <block type="end"></block>
+      <block type="cls"></block>
+      <block type="locate"></block>
+      <block type="clt"></block>
+      <block type="scroll"></block>
+    </category>
+    <!-- <category name="{catLogic}" colour="210">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
@@ -368,8 +433,10 @@
     </category>
     <sep></sep>
     <category name="{catVariables}" colour="330" custom="VARIABLE"></category>
-    <category name="{catFunctions}" colour="290" custom="PROCEDURE"></category>
+    <category name="{catFunctions}" colour="290" custom="PROCEDURE"></category> -->
   </xml>
+
+  <script src="my.js" charset="utf-8"></script>
 
 </body>
 </html>
