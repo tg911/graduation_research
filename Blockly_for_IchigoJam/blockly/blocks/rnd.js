@@ -1,6 +1,6 @@
 Blockly.Blocks['rnd'] = {
   init: function() {
-    this.appendValueInput("rnd")
+    this.appendValueInput("random")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("未満のランダムな正数");

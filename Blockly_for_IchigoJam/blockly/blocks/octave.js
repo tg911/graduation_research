@@ -3,7 +3,7 @@ Blockly.Blocks['octave'] = {
     this.appendValueInput("note")
         .setCheck("note")
         .appendField("オクターブの値")
-        .appendField(new Blockly.FieldNumber(0, 1, 5), "octave")
+        .appendField(new Blockly.FieldNumber(0, 1, 5), "octaveNum")
         .appendField("：");
     this.setInputsInline(false);
     this.setOutput(true, "note");

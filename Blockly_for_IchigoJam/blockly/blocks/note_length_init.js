@@ -3,7 +3,7 @@ Blockly.Blocks['note_length_init'] = {
     this.appendValueInput("note")
         .setCheck("note")
         .appendField("指定無しの時の長さ")
-        .appendField(new Blockly.FieldTextInput("4"), "note_length_init")
+        .appendField(new Blockly.FieldTextInput("4"), "noteLength")
         .appendField("：");
     this.setInputsInline(false);
     this.setOutput(true, "note");

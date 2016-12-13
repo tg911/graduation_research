@@ -1,6 +1,6 @@
 Blockly.Blocks['print'] = {
   init: function() {
-    this.appendValueInput("string")
+    this.appendValueInput("arg")
         .setCheck(["Number", "String"]);
     this.appendDummyInput()
         .appendField("を表示する");

@@ -1,5 +1,5 @@
-Blockly.JavaScript['clt'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+Blockly.IchigoJamBASIC['clt'] = function(block) {
+  // TODO: Assemble IchigoJamBASIC into code variable.
+  var code = "CLT\n";
   return code;
 };

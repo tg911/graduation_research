@@ -1,10 +1,10 @@
 Blockly.Blocks['calculation'] = {
   init: function() {
-    this.appendValueInput("varA")
+    this.appendValueInput("arg1")
         .setCheck("Number");
-    this.appendValueInput("varB")
+    this.appendValueInput("arg2")
         .setCheck("Number")
-        .appendField(new Blockly.FieldDropdown([["+", "addition"], ["-", "subtraction"], ["*", "multiplication"], ["/", "division"], ["%", "modulo"], ["AND", "and"], ["OR", "or"], ["=", "equal"], ["<>", "notEqual"], ["<=", "lessEqual"], ["<", "less"], [">=", "greaterEqual"], [">", "greater"]]), "calculation");
+        .appendField(new Blockly.FieldDropdown([["+", "+"], ["-", "-"], ["*", "*"], ["/", "/"], ["%", "%"], ["AND", "AND"], ["OR", "OR"], ["=", "="], ["<>", "<>"], ["<=", "<="], ["<", "<"], [">=", ">="], [">", ">"]]), "operator");
     this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setColour(210);

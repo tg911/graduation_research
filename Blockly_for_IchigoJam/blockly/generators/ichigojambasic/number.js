@@ -1,7 +1,7 @@
-Blockly.JavaScript['number'] = function(block) {
-  var number_number = block.getFieldValue('number');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+Blockly.IchigoJamBASIC['number'] = function(block) {
+  var number_num = block.getFieldValue('num');
+  // TODO: Assemble IchigoJamBASIC into code variable.
+  var code = number_num;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.IchigoJamBASIC.ORDER_NONE];
 };

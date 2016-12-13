@@ -1,15 +1,15 @@
 Blockly.Blocks['if_else'] = {
   init: function() {
-    this.appendValueInput("condition")
+    this.appendValueInput("boolean")
         .setCheck("Number")
         .appendField("もし");
     this.appendDummyInput()
         .appendField("が0でなければ");
-    this.appendStatementInput("execute")
+    this.appendStatementInput("contents")
         .setCheck(null);
     this.appendDummyInput()
         .appendField("そうでなければ");
-    this.appendStatementInput("elseExecute")
+    this.appendStatementInput("elseContents")
         .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);

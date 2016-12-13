@@ -1,6 +1,6 @@
 Blockly.Blocks['tempo'] = {
   init: function() {
-    this.appendValueInput("tempo")
+    this.appendValueInput("arg")
         .setCheck("Number")
         .appendField("音のテンポを");
     this.appendDummyInput()

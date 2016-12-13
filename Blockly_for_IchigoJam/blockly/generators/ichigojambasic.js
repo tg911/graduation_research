@@ -141,10 +141,11 @@ Blockly.IchigoJamBASIC.init = function(workspace) {
 
   var defvars = [];
   var variables = workspace.variableList;
-  for (var i = 0; i < variables.length; i++) {
-    defvars[i] = Blockly.IchigoJamBASIC.variableDB_.getName(variables[i],
-        Blockly.Variables.NAME_TYPE) + ' = None';
-  }
+  // IchigoJamBASICでは変数一覧をworkspaceに表示しないのでコメントアウト
+  // for (var i = 0; i < variables.length; i++) {
+  //   defvars[i] = Blockly.IchigoJamBASIC.variableDB_.getName(variables[i],
+  //       Blockly.Variables.NAME_TYPE) + ' = None';
+  // }
   Blockly.IchigoJamBASIC.definitions_['variables'] = defvars.join('\n');
 };
 

@@ -1,7 +1,7 @@
 Blockly.Blocks['scroll'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["上", "up"], ["右", "right"], ["下", "down"], ["左", "left"]]), "direction")
+        .appendField(new Blockly.FieldDropdown([["上", "UP"], ["右", "RIGHT"], ["下", "DOWN"], ["左", "LEFT"]]), "direction")
         .appendField("方向に1マス分スクロールする");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);

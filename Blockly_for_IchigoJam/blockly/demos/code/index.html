@@ -5,6 +5,7 @@
   <meta name="google" value="notranslate">
   <title>Blockly for IchigoJam</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="my.css">
   <script src="/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
@@ -14,7 +15,7 @@
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
   <script src="../../ichigojambasic_compressed.js"></script>
-  <!-- <script src="../../ichigojambasic_uncompressed_fordebug.js"></script> -->
+  <!-- <script src="../../ichigojamCompresse.js"></script> -->
   <script src="code.js"></script>
 </head>
 <body>
@@ -89,7 +90,6 @@
       <block type="input"></block>
     </category>
     <category name="{catLoops}" colour="45">
-      <block type="goto"></block>
       <block type="for"></block>
     </category>
     <category name="{catVariables}" colour="0">
@@ -98,10 +98,12 @@
     </category>
     <category name="{catCalculations}" colour="90">
       <block type="let"></block>
+      <block type="not"></block>
       <block type="number"></block>
       <block type="string"></block>
       <block type="calculation"></block>
       <block type="variable"></block>
+      <block type="continuity"></block>
     </category>
     <category name="{catNotes}" colour="260">
       <block type="note_c"></block>
@@ -132,8 +134,9 @@
       <block type="in"></block>
       <block type="ana"></block>
     </category>
-    <category name="{catothers}" colour="65">
+    <category name="{catOthers}" colour="65">
       <block type="wait"></block>
+      <block type="goto"></block>
       <block type="end"></block>
       <block type="cls"></block>
       <block type="locate"></block>

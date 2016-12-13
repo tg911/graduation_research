@@ -1,7 +1,8 @@
-Blockly.JavaScript['out'] = function(block) {
-  var dropdown_out = block.getFieldValue('out');
-  var dropdown_bool = block.getFieldValue('bool');
+Blockly.IchigoJamBASIC['out'] = function(block) {
+  var dropdown_output = block.getFieldValue('output');
+  var dropdown_boolean = block.getFieldValue('boolean');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+
+  var code = "OUT " + dropdown_output + "," + dropdown_boolean + "\n";
   return code;
 };

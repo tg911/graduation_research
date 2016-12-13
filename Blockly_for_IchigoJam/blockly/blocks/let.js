@@ -1,8 +1,9 @@
-﻿Blockly.Blocks['let'] = {
+Blockly.Blocks['let'] = {
   init: function() {
     this.appendValueInput("num")
         .setCheck("Number")
-        .appendField(new Blockly.FieldVariable("変数1"), "NAME")
+        .appendField("変数")
+        .appendField(new Blockly.FieldVariable("A"), "A")
         .appendField("に");
     this.appendDummyInput()
         .appendField("を入れる");

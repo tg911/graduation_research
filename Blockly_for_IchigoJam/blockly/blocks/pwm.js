@@ -1,7 +1,7 @@
 Blockly.Blocks['pwm'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["OUT2", "out2"], ["OUT3", "out3"], ["OUT4", "out4"], ["OUT5", "out5"]]), "out")
+        .appendField(new Blockly.FieldDropdown([["OUT2", "2"], ["OUT3", "3"], ["OUT4", "4"], ["OUT5", "5"]]), "output")
         .appendField("で")
         .appendField(new Blockly.FieldNumber(2000, 0, 2000), "msec")
         .appendField("ミリ秒")

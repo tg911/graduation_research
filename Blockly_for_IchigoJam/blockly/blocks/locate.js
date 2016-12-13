@@ -1,11 +1,11 @@
 Blockly.Blocks['locate'] = {
   init: function() {
-    this.appendValueInput("width")
-        .setCheck(null)
+    this.appendValueInput("horizontal")
+        .setCheck("Number")
         .appendField("次に文字を書く位置を")
         .appendField("横");
-    this.appendValueInput("height")
-        .setCheck(null)
+    this.appendValueInput("vertical")
+        .setCheck("Number")
         .appendField("縦");
     this.appendDummyInput()
         .appendField("に指定する");

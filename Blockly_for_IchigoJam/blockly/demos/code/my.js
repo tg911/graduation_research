@@ -20,7 +20,16 @@ for (var i = 0; i < Code.TABS_.length; i++) {
    // Account for the 19 pixel margin and on each side.
    }
 };
-
+// 謎マージンを消す
 (window.onload = function() {
  margin_off();
 })();
+
+// value input fieldsの括弧を消す
+// var brackets_off = function(e) {
+// 予定
+// };
+
+// ブロックの彩度を変更
+// Blockly.HSV_SATURATION = 1.00;
+// Blockly.HSV_VALUE = 1.00;

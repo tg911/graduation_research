@@ -13,7 +13,7 @@ var MSG = {
   catCalculations: "計算",
   catNotes: "音符",
   catProcedures: "関数",
-  catothers: "その他",
+  catOthers: "その他",
   httpRequestError: "ネットワーク接続のエラーです。",
   linkAlert: "ブロックの状態をこのリンクで共有できます:\n\n%1",
   hashError: "すみません。「%1」という名前のプログラムは保存されていません。",

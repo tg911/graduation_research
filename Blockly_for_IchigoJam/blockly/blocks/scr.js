@@ -1,10 +1,10 @@
 Blockly.Blocks['scr'] = {
   init: function() {
-    this.appendValueInput("width")
-        .setCheck(null)
+    this.appendValueInput("horizontal")
+        .setCheck("Number")
         .appendField("横");
-    this.appendValueInput("height")
-        .setCheck(null)
+    this.appendValueInput("vertical")
+        .setCheck("Number")
         .appendField("縦");
     this.appendDummyInput()
         .appendField("の位置にある文字コード");

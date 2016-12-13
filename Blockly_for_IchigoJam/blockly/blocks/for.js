@@ -1,7 +1,10 @@
 Blockly.Blocks['for'] = {
   init: function() {
     this.appendValueInput("from")
-        .setCheck("Number");
+        .setCheck("Number")
+        .appendField("変数")
+        .appendField(new Blockly.FieldVariable("I"), "I")
+        .appendField("を");
     this.appendDummyInput()
         .appendField("から");
     this.appendValueInput("to")

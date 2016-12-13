@@ -1,7 +1,8 @@
-﻿Blockly.Blocks['variable'] = {
+Blockly.Blocks['variable'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldVariable("変数1"), "var1");
+        .appendField("変数")
+        .appendField(new Blockly.FieldVariable("A"), "A");
     this.setOutput(true, "Number");
     this.setColour(330);
     this.setTooltip('');

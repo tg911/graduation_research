@@ -1,11 +1,11 @@
 Blockly.Blocks['if'] = {
   init: function() {
-    this.appendValueInput("condition")
+    this.appendValueInput("boolean")
         .setCheck("Number")
         .appendField("もし");
     this.appendDummyInput()
         .appendField("が0でなければ");
-    this.appendStatementInput("execute")
+    this.appendStatementInput("contents")
         .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
