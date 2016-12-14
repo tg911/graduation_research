@@ -1,0 +1,24 @@
+.pln {
+  font-size: 40px;
+  color: #000　!important;　
+}
+
+.lit {
+  font-size: 40px;
+  color: #000 !important;
+}
+
+.str {
+  font-size: 40px;
+  color: #000 !important;
+}
+
+.pun {
+  font-size: 40px;
+  color: #000 !important;
+}
+
+.kwd {
+  font-size: 40px;
+  color: #000 !important;
+}

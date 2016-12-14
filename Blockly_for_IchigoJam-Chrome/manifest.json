@@ -1,0 +1,16 @@
+{
+	"name": "Blockly for IchigoJam（仮）",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "IchigoJam用ビジュアルプログラミングエディタ",
+
+	"app": {
+		"background": {
+			"scripts": [ "background.js" ]
+		}
+	},
+
+	"icons": {
+		"128": "icon.png"
+	}
+}
