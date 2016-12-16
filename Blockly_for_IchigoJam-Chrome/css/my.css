@@ -22,3 +22,9 @@
   font-size: 40px;
   color: #000 !important;
 }
+
+#content_ichigojambasic {
+  font-size: 20px;
+  user-select: text;
+  cursor: auto;
+}

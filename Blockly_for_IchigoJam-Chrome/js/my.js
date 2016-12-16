@@ -34,7 +34,9 @@ for (var i = 0; i < Code.TABS_.length; i++) {
 // Blockly.HSV_SATURATION = 1.00;
 // Blockly.HSV_VALUE = 1.00;
 
-// IchigoJamBASIC以外の言語と実行ボタンを非表示に
+// IchigoJamBASIC以外の言語と実行ボタンと全消去ボタンを非表示に
+// 全消去ボタンはconfirm()を使用しているが、ChromeAppsでは使用できないためどうするのか検討
+document.getElementById('trashButton').setAttribute("style", "display:none");
 document.getElementById('runButton').setAttribute("style", "display:none");
 document.getElementById('tab_javascript').setAttribute("style", "display:none");
 document.getElementById('tab_python').setAttribute("style", "display:none");

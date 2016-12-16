@@ -7,8 +7,7 @@ Blockly.IchigoJamBASIC['let'] = function(block) {
   value_num = value_num.substr(0,value_num.length-1);
 
   var code = "LET " + variable_a + "," + value_num + "\n";
-
-  console.log("varNewValue:" + varNewValue)
+  console.log(code)
 
   return code;
 };
