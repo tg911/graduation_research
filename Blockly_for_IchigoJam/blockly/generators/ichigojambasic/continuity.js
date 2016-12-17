@@ -1,7 +1,7 @@
-Blockly.JavaScript['continuity'] = function(block) {
-  var value_arg1 = Blockly.JavaScript.valueToCode(block, 'arg1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_arg2 = Blockly.JavaScript.valueToCode(block, 'arg2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+Blockly.IchigoJamBASIC['continuity'] = function(block) {
+  var value_arg1 = Blockly.IchigoJamBASIC.valueToCode(block, 'arg1', Blockly.IchigoJamBASIC.ORDER_ATOMIC);
+  var value_arg2 = Blockly.IchigoJamBASIC.valueToCode(block, 'arg2', Blockly.IchigoJamBASIC.ORDER_ATOMIC);
+  // TODO: Assemble IchigoJamBASIC into code variable.
 
   // 括弧を取り除く
   value_arg1 = value_arg1.substr(1);
@@ -11,5 +11,5 @@ Blockly.JavaScript['continuity'] = function(block) {
 
   var code = value_arg1 + "," + value_arg2;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.IchigoJamBASIC.ORｓDER_NONE];
 };
