@@ -124,14 +124,21 @@ var sendToIchigoJam = function(e) {
   var sliceCode = contentsTag.innerText.split('');
   // console.log(code)
   // console.log(code.length)
-  var buffer = new ArrayBuffer(sliceCode.length);
+  var buffer = new ArrayBuffer(sliceCode.length + 1);
   // console.log("buffer:" + buffer)
   var view = new Uint8Array(buffer);
   // console.log("viewBefore:" + view)
   console.log(sliceCode)
+  // var newLineCount = 0;
   // 文字をキャラクターコードに変換
   for (var i = 0; i < sliceCode.length; i++) {
     view[i] = sliceCode[i].charCodeAt(0);
+    // if (view[i] == 10) newLineCount++;
+    if (view[i] == 10) {
+      console.log("view:" + view)
+      view[i] = 1310; // IchigoJamの改行コードはCR+LFなのでCR(13)＋LF(10)?
+      console.log("view:" + view)
+    }
   }
   console.log("viewAfter:" + view)
   chrome.serial.send(conid, buffer, function(info) {
@@ -140,7 +147,57 @@ var sendToIchigoJam = function(e) {
       console.log("flush: " + res);
     });
   });
+
 };
+
+// var sendKey = function(n) {
+//   console.log("sendKey(n):" + n)
+//   if (conid == -1)
+//   return;
+//   var abuf = new ArrayBuffer(1);
+//   // console.log("abuf:" + abuf)
+//   var buf = new Uint8Array(abuf);
+//   // console.log("buf:" + buf)
+//   buf[0] = n;
+//   // console.log("buf[0]:" + buf[0])
+//   chrome.serial.send(conid, abuf, function(info) {
+//     // console.log("send: " + info.bytesSent);
+//     chrome.serial.flush(conid, function(res) {
+//       // console.log("flush: " + res);
+//     });
+//   });
+// };
+
+// var sendToIchigoJam = function(e) {
+//   console.log("sendToIchigoJam")
+//   if (conid == -1)
+//   return;
+//
+//   var contentsTag = document.getElementById("content_ichigojambasic");
+//   var sliceCode = contentsTag.innerText.split('');
+//   // console.log(code)
+//   // console.log(code.length)
+//   var buffer = new ArrayBuffer(sliceCode.length);
+//   // console.log("buffer:" + buffer)
+//   var view = new Uint8Array(buffer);
+//   // console.log("viewBefore:" + view)
+//   console.log(sliceCode)
+//   // var newLineCount = 0;
+//   // 文字をキャラクターコードに変換
+//   for (var i = 0; i < sliceCode.length; i++) {
+//     view[i] = sliceCode[i].charCodeAt(0);
+//     if (view[i] == 10) {
+//       view[i] = 1310;
+//     }
+//   }
+//   console.log("viewAfter:" + view)
+//   while (view.length != 0) {
+//     console.log("view[0]:" + view[0])
+//     sendKey(view[0]);
+//     view = view.slice(1);
+//     console.log("view.length:" + view.length)
+//   }
+// };
 
 var open = function(port) {
   chrome.serial.connect(port, { bitrate: 115200 }, function(info) {
