@@ -94,11 +94,15 @@ var setLineNumber = function(e) {
       lineNum += 10;
     }
     if (sliceCode[i] == "\n") {
+      // console.log("sliceCodeBefore:" + sliceCode)
+      // sliceCode[i] = "\r\n";
+      // console.log("sliceCodeAfter:" + sliceCode)
       sliceCode.splice(i+1, 0, lineNum, " ");
       sliceCode.length += 2;
       lineNum += 10;
     }
   }
+  sliceCode.push("\n");
   code = sliceCode.join("");
   console.log(sliceCode)
   // console.log("finalcode:" + code);
@@ -106,67 +110,140 @@ var setLineNumber = function(e) {
   document.getElementById("content_ichigojambasic").innerText = code;
 };
 
-var sendToIchigoJam = function(e) {
-  console.log("sendToIchigoJam")
+// var sendToIchigoJam = function(e) {
+//   console.log("sendToIchigoJam")
+//   if (conid == -1)
+//   return;
+//   // var contentsTag = document.getElementById("content_ichigojambasic").getElementsByTagName("span");
+//   // var code = "";
+//   // htmlのタグの中身を取り出す
+//   // var getContents = function(e) {
+//   //   for (var i = 0; i < contentsTag.length; i++){
+//   //     code += contentsTag[i].innerText;
+//   //   }
+//   // };
+//   // getContents();
+//
+//   var contentsTag = document.getElementById("content_ichigojambasic");
+//   var sliceCode = contentsTag.innerText.split('');
+//   // console.log(code)
+//   // console.log(code.length)
+//   var buffer = new ArrayBuffer(sliceCode.length);
+//   // console.log("buffer:" + buffer)
+//   var view = new Uint8Array(buffer);
+//   // console.log("viewBefore:" + view)
+//   console.log(sliceCode)
+//   // var newLineCount = 0;
+//   // 文字をキャラクターコードに変換
+//   for (var i = 0; i < sliceCode.length; i++) {
+//     view[i] = sliceCode[i].charCodeAt(0);
+//     // if (view[i] == 10) newLineCount++;
+//     // if (view[i] == 10) {
+//     //   console.log("view:" + view)
+//     //   view[i] = 8; // IchigoJamの改行コードはCR+LFなのでCR(13)＋LF(10)？
+//     //   // 16だと理想の表示だが１行毎にエンターを押していないためLISTに表示されない
+//     //   // 1310だと30
+//     //   console.log("view:" + view)
+//     // }
+//   }
+//   console.log("viewAfter:" + view)
+//   chrome.serial.send(conid, buffer, function(info) {
+//     console.log("send: " + info.bytesSent);
+//     chrome.serial.flush(conid, function(res) {
+//       console.log("flush: " + res);
+//     });
+//   });
+//
+// };
+
+var sendKey = function(n) {
+  console.log("sendKey(n):" + n)
   if (conid == -1)
   return;
-  // var contentsTag = document.getElementById("content_ichigojambasic").getElementsByTagName("span");
-  // var code = "";
-  // htmlのタグの中身を取り出す
-  // var getContents = function(e) {
-  //   for (var i = 0; i < contentsTag.length; i++){
-  //     code += contentsTag[i].innerText;
-  //   }
-  // };
-  // getContents();
-
-  var contentsTag = document.getElementById("content_ichigojambasic");
-  var sliceCode = contentsTag.innerText.split('');
-  // console.log(code)
-  // console.log(code.length)
-  var buffer = new ArrayBuffer(sliceCode.length + 1);
-  // console.log("buffer:" + buffer)
-  var view = new Uint8Array(buffer);
-  // console.log("viewBefore:" + view)
-  console.log(sliceCode)
-  // var newLineCount = 0;
-  // 文字をキャラクターコードに変換
-  for (var i = 0; i < sliceCode.length; i++) {
-    view[i] = sliceCode[i].charCodeAt(0);
-    // if (view[i] == 10) newLineCount++;
-    if (view[i] == 10) {
-      console.log("view:" + view)
-      view[i] = 1310; // IchigoJamの改行コードはCR+LFなのでCR(13)＋LF(10)?
-      console.log("view:" + view)
-    }
-  }
-  console.log("viewAfter:" + view)
-  chrome.serial.send(conid, buffer, function(info) {
+  var abuf = new ArrayBuffer(1);
+  // console.log("abuf:" + abuf)
+  var buf = new Uint8Array(abuf);
+  // console.log("buf:" + buf)
+  buf[0] = n;
+  // console.log("buf[0]:" + buf[0])
+  chrome.serial.send(conid, abuf, function(info) {
     console.log("send: " + info.bytesSent);
     chrome.serial.flush(conid, function(res) {
       console.log("flush: " + res);
     });
   });
-
+  // var timerID = setTimeout(sendKey(n), 1000);
+  // clearTimeout(timerID);
 };
 
-// var sendKey = function(n) {
-//   console.log("sendKey(n):" + n)
-//   if (conid == -1)
-//   return;
-//   var abuf = new ArrayBuffer(1);
-//   // console.log("abuf:" + abuf)
-//   var buf = new Uint8Array(abuf);
-//   // console.log("buf:" + buf)
-//   buf[0] = n;
-//   // console.log("buf[0]:" + buf[0])
-//   chrome.serial.send(conid, abuf, function(info) {
-//     // console.log("send: " + info.bytesSent);
-//     chrome.serial.flush(conid, function(res) {
-//       // console.log("flush: " + res);
-//     });
-//   });
-// };
+var sendToIchigoJam = function(e) {
+  console.log("sendToIchigoJam")
+  if (conid == -1)
+  return;
+
+  var contentsTag = document.getElementById("content_ichigojambasic");
+  var sliceCode = contentsTag.innerText.split('');
+  // console.log(code)
+  // console.log(code.length)
+  var buffer = new ArrayBuffer(sliceCode.length);
+  // console.log("buffer:" + buffer)
+  var view = new Uint8Array(buffer);
+  // console.log("viewBefore:" + view)
+  console.log(sliceCode)
+  var delay = 0;
+  // var newLineCount = 0;
+  // 文字をキャラクターコードに変換
+  for (var i = 0; i < sliceCode.length; i++) {
+    view[i] = sliceCode[i].charCodeAt(0);
+    // if (view[i] == 10) newLineCount++;
+    // if (view[i] == 10) {
+    //   view[i] = 16;
+    // }
+  }
+  console.log("viewAfter:" + view)
+  while (view.length != 0) {
+    delay = 0;
+    // sendKey(view[0]);
+    // if (view[0] == 10) {
+    //   sendKey(10);
+    // } else if (view[0] > 0) {
+    //   sendKey(view[0]);
+    //   console.log("view[0]:" + view[0])
+    // }
+    sendKey(view[0]);
+    while (delay < 100000000){
+      delay++;
+    }
+    // var timerID = setTimeout(sendKey(view[0]), 1000);
+    // clearTimeout(timerID);
+    view = view.slice(1);
+    console.log("view.length:" + view.length)
+  }
+  // var nlc = newLineCount;
+  // while (nlc > 0) {
+  //   console.log("nlc: " + nlc)
+  //   sendKey(30);
+  //   nlc--;
+  // }
+
+  // while (newLineCount > 0) {
+  //   console.log("newLineCount: " + newLineCount)
+  //   sendKey(10);
+  //   newLineCount--;
+  // }
+
+  // while (view.length != 0) {
+  //   console.log("view[0]: " + view[0])
+  //   while (view[0] != 10) {
+  //     sendKey(view[0]);
+  //     view = view.slice(1);
+  //     console.log("view1: " + view)
+  //   }
+  //   sendKey(view[0]);
+  //   view = view.slice(1);
+  //   console.log("view2: " + view)
+  // }
+};
 
 // var sendToIchigoJam = function(e) {
 //   console.log("sendToIchigoJam")
@@ -182,22 +259,67 @@ var sendToIchigoJam = function(e) {
 //   var view = new Uint8Array(buffer);
 //   // console.log("viewBefore:" + view)
 //   console.log(sliceCode)
-//   // var newLineCount = 0;
+//   var newLineCount = 0;
 //   // 文字をキャラクターコードに変換
 //   for (var i = 0; i < sliceCode.length; i++) {
 //     view[i] = sliceCode[i].charCodeAt(0);
+//     if (view[i] == 10) newLineCount++;
 //     if (view[i] == 10) {
-//       view[i] = 1310;
+//       view[i] = 16;
 //     }
 //   }
 //   console.log("viewAfter:" + view)
 //   while (view.length != 0) {
-//     console.log("view[0]:" + view[0])
-//     sendKey(view[0]);
+//     // sendKey(view[0]);
+//     if (view[0] == 10) {
+//       sendKey(10);
+//     } else if (view[0] > 0) {
+//       sendKey(view[0]);
+//       console.log("view[0]:" + view[0])
+//     }
 //     view = view.slice(1);
 //     console.log("view.length:" + view.length)
 //   }
+//   var nlc = newLineCount;
+//   while (nlc > 0) {
+//     console.log("nlc: " + nlc)
+//     sendKey(30);
+//     nlc--;
+//   }
+//
 // };
+
+// var sendToIchigoJam = function() {
+//   if (conid == -1)
+//   return;
+//   var contentsTag = document.getElementById("content_ichigojambasic");
+//   var sliceCode = contentsTag.innerText.split('');
+//   var buffer = new ArrayBuffer(sliceCode.length);
+//   // console.log("buffer:" + buffer)
+//   var view = new Uint8Array(buffer);
+//   var newLineCount = 0;
+//   // 文字をキャラクターコードに変換
+//   for (var i = 0; i < sliceCode.length; i++) {
+//     view[i] = sliceCode[i].charCodeAt(0);
+//     if (view[i] == 10) newLineCount++;
+//     if (view[i] == 10) {
+//       view[i] = 16;
+//     }
+//   }
+// };
+
+var sendEnter = function() {
+  sendKey(10);
+  console.log("sendEnter!")
+};
+
+var sendRun = function() {
+  sendKey(82);
+  sendKey(85);
+  sendKey(78);
+  sendKey(10);
+  console.log("sendRun!")
+}
 
 var open = function(port) {
   chrome.serial.connect(port, { bitrate: 115200 }, function(info) {
@@ -240,6 +362,8 @@ window.onload = function() {
   });
   document.getElementById("send").onclick = sendToIchigoJam;
   document.getElementById("tab_ichigojambasic").onclick = setLineNumber;
+  // document.getElementById("enter").onclick = sendEnter;
+  document.getElementById("run").onclick = sendRun;
 };
 
 // ブロックの彩度を変更
